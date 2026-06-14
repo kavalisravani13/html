@@ -1,0 +1,27 @@
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Source Code Downloaded'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'javac Hello.java'
+            }
+        }
+
+        stage('Execute') {
+            steps {
+                bat 'java Hello'
+            }
+        }
+
+    }
+
+}
